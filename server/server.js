@@ -6,7 +6,6 @@ const port = process.env.PORT || 8080;
 let app = express();
 
 app.use(express.static(publicPath));
-debugger;
 
 app.listen(port, ()=> {
     console.log(`Server is up on port ${port}`);
