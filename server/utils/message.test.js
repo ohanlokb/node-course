@@ -3,12 +3,11 @@ let {generateMessage} = require('./message');
 
 describe('generate message', ()=>{
     it('should generate correct message object', ()=>{
-        let msg = generateMessage('test', 'message');
+        let from = 'test';
+        let text = 'message';
+        let msg = generateMessage(from, text);
         
-        expect(msg).toBeTruthy();
-        expect(msg.from).toBe('test');
-        expect(msg.text).toBe('message');
         expect(typeof msg.createdAt).toBe('number');
-        
+        expect(msg).toMatchObject({from,text});        
     });
 });
